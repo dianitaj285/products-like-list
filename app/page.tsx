@@ -44,18 +44,34 @@ function Comments() {
             key={comment.id}
             className="flex flex-col p-2 bg-white border-2 rounded "
           >
-            <div>
+            <div className="flex gap-4">
               <div>
-                <span className="font-bold">User name: </span>
-                <span>{comment.name}</span>
+                <div>
+                  <span className="font-bold">User name: </span>
+                  <span>{comment.name}</span>
+                </div>
+
+                <div>
+                  <span className="font-bold">Comment: </span>
+                  <span>{comment.body}</span>
+                </div>
               </div>
 
-              <div>
-                <span className="font-bold">Comment: </span>
-                <span>{comment.body}</span>
+              <div className="h-8 w-8">
+                <div className="h-auto w-[100%]">
+                  <img
+                    src={
+                      likedImages.includes(comment.id)
+                        ? likeImageIcon
+                        : dislikeImageIcon
+                    }
+                    alt="like"
+                  />
+                </div>
               </div>
 
               <button
+                className=" border-2 p-2 rounded pointer bg-black text-white"
                 onClick={(event: MouseEvent<HTMLButtonElement>) => {
                   if (!likedImages.includes(comment.id)) {
                     setLikedImages((ids) => [...ids, comment.id]);
@@ -66,14 +82,9 @@ function Comments() {
                   }
                 }}
               >
-                <img
-                  src={
-                    likedImages.includes(comment.id)
-                      ? likeImageIcon
-                      : dislikeImageIcon
-                  }
-                  alt="like"
-                />
+                <div className="h-auto w-[100%]">
+                  {likedImages.includes(comment.id) ? "Dislike" : "Like"}
+                </div>
               </button>
             </div>
           </div>
