@@ -71,7 +71,7 @@ function Comments() {
               </div>
 
               <button
-                className=" border-2 p-2 rounded pointer bg-black text-white"
+                className="p-2 pointer rounded-lg bg-slate-500 text-white w-[100px]"
                 onClick={(event: MouseEvent<HTMLButtonElement>) => {
                   if (!likedImages.includes(comment.id)) {
                     setLikedImages((ids) => [...ids, comment.id]);
