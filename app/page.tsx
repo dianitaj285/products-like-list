@@ -14,7 +14,7 @@ const likeImageIcon =
   "https://static.vecteezy.com/system/resources/thumbnails/000/422/468/small/Multimedia__28107_29.jpg";
 
 const dislikeImageIcon =
-  "https://www.shutterstock.com/image-vector/thumbs-down-unlike-icon-vector-260nw-1456124162.jpg";
+  "https://as1.ftcdn.net/v2/jpg/02/39/04/08/1000_F_239040826_VSmSisHQlKJ8SG2madLTSxVIYhJBSgLn.jpg";
 
 function Comments() {
   const [comments, setComments] = React.useState<Comment[]>([]);
